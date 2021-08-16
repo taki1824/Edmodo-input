@@ -1,12 +1,12 @@
 {
     "name": "Edomodo textarea adjuster",
     "short_name": "textarea adjuster",
-    "version": "0.1.0.0",
+    "version": "0.1.1.0",
     "author": "taki1824",
     "manifest_version": 2,
     "homepage_url": "https://twitter.com/gamer_homeboy",
     "description": "change and adjust text input area in Edmodo",
-    "permissions":["storage","tabs","https://new.edmodo.com/messages/*"],
+    "permissions":["storage","tabs","unlimitedStorage","https://new.edmodo.com/messages/*"],
     "content_scripts": [{
       "matches": ["https://new.edmodo.com/messages/*", "http://new.edmodo.com/messages/*"],
       "js": ["content.js"],

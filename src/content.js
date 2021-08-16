@@ -6,7 +6,7 @@ var height = '80px';
 //保存されていたデータ取得して要素に適用する
 function getSyncData(){
     var returnData
-    chrome.storage.sync.get('data', function (value) {
+    chrome.storage.local.get('data', function (value) {
         Object.assign(data, value.data);
         returnData = String(data.height) + 'px';
         textarea.style.height = returnData;

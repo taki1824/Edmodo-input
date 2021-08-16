@@ -9,7 +9,7 @@ window.onload = function() {
     slider = document.getElementById('slider');
 
     //保存されていたデータ取得してスライダーに適用させる
-    chrome.storage.sync.get('data', function (value) {
+    chrome.storage.local.get('data', function (value) {
         console.log('!');
         Object.assign(data, value.data);
         var height = String(data.height);
@@ -26,7 +26,7 @@ window.onload = function() {
         data.height = slider.value;
 
         //値の格納
-        chrome.storage.sync.set({data}, function(){
+        chrome.storage.local.set({data}, function(){
             console.log("saved");
         });   
         
