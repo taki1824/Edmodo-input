@@ -1,20 +1,34 @@
 var label = null;
 var slider = null;
+var data = {};
 
+//popup.html　読み込み後の処理
 window.onload = function() {
+    //要素の取得
     label = document.getElementById('label');
     slider = document.getElementById('slider');
 
-    slider.addEventListener("input", function() {
-        label.textContent = 'Input area height is ' + slider.value + 'px';
+    //保存されていたデータ取得してスライダーに適用させる
+    chrome.storage.sync.get('data', function (value) {
+        console.log('!');
+        Object.assign(data, value.data);
+        var height = String(data.height);
+        console.log('test' + height) ;
+        slider.value = height;
+        label.textContent = 'Input area height is ' + height + 'px';
+        
+    });
 
-        //リファレンス https://kajindowsxp.com/chrome-message/#toc1, https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage, https://developer.chrome.com/docs/extensions/reference/tabs/ 
-        //chrome.tabs.query() 関数で現在開いているタブを取得
-        var send_data = { type: 'height', data: slider.value };
-        chrome.tabs.query({ active: true, currentWindow: true }, aim_message);
-        function aim_message(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, send_data, );
-        }        
+    //スライダーに入力があった時の動作
+    slider.addEventListener("input", function() {
+        //ラベルの変更
+        label.textContent = 'Input area height is ' + slider.value + 'px';
+        data.height = slider.value;
+
+        //値の格納
+        chrome.storage.sync.set({data}, function(){
+            console.log("saved");
+        });   
         
     });
 
