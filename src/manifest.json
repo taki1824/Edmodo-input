@@ -1,8 +1,10 @@
 {
     "name": "Edomodo textarea adjuster",
     "short_name": "textarea adjuster",
-    "version": "0.0.1.0",
+    "version": "0.0.2.0",
+    "author": "taki1824",
     "manifest_version": 2,
+    "default_locale": "ja_JP",
     "homepage_url": "https://twitter.com/gamer_homeboy",
     "description": "change and adjust text input area in Edmodo",
     "permissions":["storage","tabs","https://new.edmodo.com/messages/*"],
@@ -11,5 +13,9 @@
       "js": [
         "content.js"
       ]
-    }]
+    }],
+    "browser_action": {
+      "default_title": "adjust text area height",
+      "default_popup": "popup.html" 
+    }
   }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 150px;
+        }
+        
+        label {
+            font-size: small;
+        }
+    </style>
+    <script>
+        var label = null;
+        var slider = null;
+        window.onload = function() {
+            label = document.getElementById('label');
+            slider = document.getElementById('slider');
+
+            slider.addEventListener("input", function() {
+                label.textContent = 'Input area height is ' + slider.value + 'px';
+            });
+        };
+    </script>
+</head>
+<body>
+    <label for="slider" id="label">input area height:</label>
+    <input type="range" name="slider" min="40" max="200" value="90" step="5" id="slider">
+
+
+</body>
+</html>
