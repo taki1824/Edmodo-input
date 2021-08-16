@@ -6,6 +6,8 @@ window.onload = function() {
 
     slider.addEventListener("input", function() {
         label.textContent = 'Input area height is ' + slider.value + 'px';
+
+        chrome.runtime.sendMessage(slider.value, function(response) {})
     });
-    chrome.runtime,sendMessage(slider.value, function(response) {})
+
 };

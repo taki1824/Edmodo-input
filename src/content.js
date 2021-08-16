@@ -1,4 +1,4 @@
-window.onload = function(){
+window.addEventListener('load', function() {
     var textarea = document.getElementsByClassName('composer-textarea qa-test-message-composer-textarea ')[0];
     var message_area = document.getElementsByClassName('chat-message-conversation-list-container')[0];
     var document_height = document.documentElement.clientHeight;
@@ -14,4 +14,4 @@ window.onload = function(){
     textarea.style.height = height;
 
     message_area.style.height = 'calc(100vh - 217px - ' + height + ')';
-}
+})
