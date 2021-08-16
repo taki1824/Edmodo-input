@@ -1,7 +1,7 @@
 {
     "name": "Edomodo textarea adjuster",
     "short_name": "textarea adjuster",
-    "version": "0.0.2.4",
+    "version": "0.0.3.0",
     "author": "taki1824",
     "manifest_version": 2,
     "homepage_url": "https://twitter.com/gamer_homeboy",
@@ -21,4 +21,5 @@
       "default_title": "adjust text area height",
       "default_popup": "popup.html" 
     }
+    
   }
