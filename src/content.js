@@ -4,6 +4,11 @@ window.onload = function(){
     var document_height = document.documentElement.clientHeight;
     var height = '100px';
 
+    chrome.runtime.onMessage.addListener(function (message) {
+        height = message + 'px';
+        return true;
+    });
+
     //textarea.style.minHeight = '110px';
     textarea.style.maxHeight = 'unset'; 
     textarea.style.height = height;

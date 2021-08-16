@@ -23,7 +23,9 @@
             slider.addEventListener("input", function() {
                 label.textContent = 'Input area height is ' + slider.value + 'px';
             });
+            chrome.runtime,sendMessage(slider.value, function(response) {})
         };
+
     </script>
 </head>
 <body>
